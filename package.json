@@ -1,0 +1,19 @@
+{
+  "name": "arc_touch_frontend",
+  "version": "1.0.0",
+  "description": "ArcTouch front-End challenge",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "serve": "node app.js",
+    "build": "node-sass --include-path scss src/scss/main.scss public/css/main.css",
+    "watch": "nodemon -e scss -x \"npm run build & npm run serve\""
+  },
+  "author": "danfragoso",
+  "license": "MIT"
+}

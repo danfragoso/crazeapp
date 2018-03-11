@@ -1,0 +1,599 @@
+/* VARIABLES*/
+
+//Colors
+$footer: #e3e3e3;
+$text: #a2a2a2;
+$white: #ffffff;
+$black: #000000;
+$main-color: #349CE6;
+$gray: #e7e7e7;
+
+$hover-text: darken($text,20%);
+$button: darken($main-color, 15%);
+
+//Page width
+$max-width: 1050px;
+
+body {
+  margin: 0;
+  font-family: 'Roboto';
+}
+
+header {
+  background-image: url("../imgs/pattern.png");
+  background-repeat: repeat;
+
+  .page-header {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding-top: 95px;
+    display: flex;
+
+    .app-title {
+      color: $white;
+      text-shadow: 3px 3px 0px rgba($black, 0.3);
+      padding-top: 10px;
+
+      .title {
+        font-family: 'Pacifico';
+        @extend .font1;
+        font-style: oblique;
+      }
+
+      .description {
+        @extend .font2;
+        margin-left: 10px;
+      }
+
+      .platforms-wrapper {
+        display: flex;
+
+        .platform-button {
+          text-align: center;
+          cursor: pointer;
+          background-color: $black;
+          opacity: 0.5;
+          border-radius: 50%;
+
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+section {
+
+  .craze-features {
+    max-width: $max-width;
+    margin: 0 auto;
+    text-align: center;
+
+    .title {
+      @extend .font2;
+      color: $black;
+      font-weight: 600;
+      margin-top: 60px;
+    }
+
+    .description {
+      margin-top: 30px;
+      @extend .font3;
+      color: $text;
+    }
+
+    .features {
+      padding: 30px 0px 30px 0px;
+
+      .h-row {
+        display: flex;
+
+        .h-line {
+          height: 1px;
+          background-color: $gray;
+          width: 33%;
+          margin: 0px 30px 0px 30px;
+        }
+      }
+      .features-row {
+        display: flex;
+
+        .v-line {
+          width: 1px;
+          background-color: $gray;
+          margin: 20px 0px 20px 0px;
+        }
+
+        .feature {
+          width: 33.3%;
+          padding: 35px;
+
+
+          .title {
+            @extend .font2;
+            color: $black;
+            font-weight: 600;
+            margin-top: 30px;
+          }
+
+          .description {
+            margin-top: 30px;
+            @extend .font3;
+            color: $text;
+          }
+        }
+      }
+    }
+  }
+
+  .whats-craze-wrapper {
+    background-color: $gray;
+
+    .whats-craze {
+      margin: 0 auto;
+      max-width: $max-width;
+      display: flex;
+
+      .description {
+        flex-direction: column;
+
+        .title {
+          @extend .font2;
+          color: $black;
+          font-weight: 600;
+          margin-top: 50px;
+        }
+
+        .description {
+          margin-top: 30px;
+          @extend .font3;
+          color: $text;
+
+          .bullet {
+            margin: 15px 0px;
+            img {
+              margin: 0px 15px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .carousel {
+    margin: 0 auto;
+    max-width: $max-width;
+
+    .slides {
+      .slide {
+        max-width: $max-width;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        padding: 5px;
+        transition: opacity 1s;
+        @extend .font5;
+        text-align: center;
+        justify-content: center;
+
+        .text {
+          color: darken($text,10%);
+          @extend .font2;
+          font-style: italic;
+          padding: 45px;
+        }
+
+        .author {
+          color: $black;
+          @extend .font6;
+          font-weight: bold;
+        }
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+
+    .bullets {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .slide-bullet {
+        cursor: pointer;
+        margin: 2px;
+        border: solid 2px $main-color;
+        height: 12px;
+        width: 12px;
+        background-color: $white;
+        border-radius: 50%;
+      }
+
+      .active-bullet {
+        background-color: $main-color;
+      }
+    }
+  }
+
+  .pricing-wrapper {
+    background-color: $gray;
+    text-align: center;
+
+    .pricing {
+      margin: 0 auto;
+      max-width: $max-width;
+
+      .title {
+        @extend .font2;
+        color: $black;
+        font-weight: 600;
+        padding-top: 60px;
+      }
+
+      .description {
+        @extend .font3;
+        color: $text;
+      }
+
+      .pricing-row {
+        display: flex;
+        align-items: center;
+
+        .pricing-card {
+          margin: 2px;
+          margin-top: 30px;
+
+          .header {
+            background-color: $main-color;
+            color: $white;
+            @extend .font4;
+          }
+
+          .body {
+            background-color: $white;
+
+            .price {
+              @extend .font7;
+              padding: 15px 0px;
+              font-weight: 600;
+              display: inline-flex;
+
+              div {
+                @extend .font8;
+                line-height: 30px;
+              }
+            }
+
+            .feature {
+              @extend .font3;
+              border-top: solid 1px $text;
+              color: $text;
+              margin: 0px 20px;
+              padding: 10px 0px;
+            }
+          }
+
+          .footer {
+            height: 80px;
+            background-color: $main-color;
+            color: $white;
+            display: flex;
+
+            .button {
+              @extend .font3;
+              font-weight: 600;
+              cursor: pointer;
+              margin: auto;
+              background-color: $button;
+              text-transform: uppercase;
+
+              &:hover {
+                background-color: darken($button,5%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .say-hi {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .title {
+      @extend .font2;
+      color: $black;
+      font-weight: 600;
+      margin-top: 60px;
+    }
+
+    .description {
+      margin-top: 30px;
+      @extend .font3;
+      color: $text;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+
+      .icon {
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: $gray;
+
+        &:hover {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: $text;
+    margin: 0 20px 0 20px;
+    text-decoration: none;
+    @extend .font3;
+
+    &:hover {
+      color: $hover-text;
+    }
+  }
+}
+
+
+//Media type dependant sizes
+@media screen and (orientation: landscape) {
+
+  .font1{font-size:80px;}
+  .font2{font-size:25px;}
+  .font3{font-size:15px;}
+  .font4{font-size:30px;}
+  .font5{font-size:40px;}
+  .font6{font-size:18px;}
+  .font7{font-size:35px;}
+  .font8{font-size:20px;}
+
+  header {
+    height: 600px;
+
+    .page-header {
+      justify-content: space-between;
+
+      .app-title {
+        margin-left: 20px;
+      }
+
+      .hand {
+        margin-left: 50px;
+      }
+    }
+  }
+
+  .pricing-card {
+    .header {
+      height: 55px;
+      line-height: 55px;
+    }
+
+    .body{
+      .feature {
+      }
+    }
+  }
+
+  .features-row {
+    .feature {
+      img {
+        width: 46px;
+        height: 46px;
+      }
+    }
+  }
+
+  .carousel {
+    .bullets {
+      height: 100px;
+      padding-top: 180px;
+    }
+  }
+
+  .platform-button {
+    height: 50px;
+    width: 50px;
+    line-height: 65px;
+    margin: 30px 5px 0px 5px;
+  }
+
+  .whats-craze {
+    .description {
+      text-align: left;
+    }
+
+    .video {
+      margin: 50px 0px 40px 30px;
+    }
+  }
+
+  .pricing-wrapper {
+    height: 560px;
+    margin-bottom: 70px;
+
+    .pricing {
+      .description {
+        margin-top: 25px;
+      }
+    }
+
+    .pricing-card {
+      width: 25%;
+
+      .footer {
+        .button {
+          line-height: 35px;
+          width: 130px;
+          height: 35px;
+        }
+      }
+    }
+  }
+
+  .say-hi {
+    .social {
+      .icon {
+        width: 40px;
+        height: 40px;
+        margin: 20px 0px 40px 5px;
+        line-height: 45px;
+      }
+    }
+  }
+
+  footer {
+    height: 130px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+
+  .font1{font-size:200px;}
+  .font2{font-size:40px;}
+  .font3{font-size:30px;}
+  .font4{font-size:60px;}
+  .font5{font-size:60px;}
+  .font6{font-size:30px;}
+  .font7{font-size:60px;}
+  .font8{font-size:45px;}
+
+  header {
+
+    .page-header {
+      flex-direction: column;
+
+      .app-title {
+        text-align: center;
+
+        .platforms-wrapper {
+          justify-content: center;
+        }
+      }
+
+      .hand {
+        margin: auto;
+      }
+    }
+  }
+
+  .craze-features {
+    .description {
+      padding: 0 30px;
+    }
+  }
+
+  .features-row {
+    .feature {
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  .carousel {
+    .bullets {
+      height: 150px;
+      padding-top: 250px;
+    }
+  }
+
+  .platform-button {
+    width: 150px;
+    height: 150px;
+    line-height: 200px;
+    margin: 30px 5px 100px 5px;
+
+    img {
+      width: 50px;
+      height: 57px;
+    }
+  }
+
+  .whats-craze {
+    flex-direction: column-reverse;
+    padding: 30px;
+
+    .description {
+      text-align: center;
+    }
+
+    .video {
+      margin: 0 auto;
+    }
+  }
+
+  .pricing-wrapper {
+    height: 100%;
+    padding-bottom: 50px;
+
+    .pricing {
+      .description {
+        margin: 30px 20px;
+      }
+    }
+
+    .pricing-row {
+      flex-direction: column;
+
+      .pricing-card {
+        width: 80%;
+
+        .footer {
+          .button {
+            line-height: 50px;
+            width: 200px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  .say-hi {
+    .social {
+      .icon {
+        width: 80px;
+        height: 80px;
+        margin: 20px 0px 40px 10px;
+        line-height: 110px;
+
+        img {
+          width: 50%;
+          height: 50%;
+        }
+      }
+    }
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 20px 0px;
+  }
+}
